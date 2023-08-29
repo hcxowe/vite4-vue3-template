@@ -128,5 +128,13 @@ export default [
             res.statusCode = 200
             res.end(JSON.stringify(ret))
         }
+    },
+    {
+        url: '/api/notfound',
+        method: 'get',
+        rawResponse: async (req, res) => {
+            res.statusCode = 404
+            res.end()
+        }
     }
 ] as MockMethod[]

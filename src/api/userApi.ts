@@ -24,3 +24,10 @@ export function userinfo() {
         method: 'get'
     })
 }
+
+export function notfound() {
+    return axios({
+        url: '/api/notfound',
+        method: 'get'
+    }, '正在不存在的接口...')
+}

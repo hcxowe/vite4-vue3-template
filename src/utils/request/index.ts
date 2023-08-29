@@ -24,6 +24,16 @@ class AxiosCX extends Axios {
             interceptorHooks?.responseInterceptorCatch
         )
     }
+
+    downloadImage(config: AxiosRequestConfig) {
+        return this.request(config).then(response => {
+            if (response.status == 200) {
+                // 下载图片代码
+
+                return Promise.resolve()
+            }
+        })
+    }
 }
 
 export default AxiosCX

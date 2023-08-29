@@ -10,7 +10,16 @@ let loadingInstance: any = null
 const request = new AxiosCX({
     baseURL: BASE_URL,
     timeout: TIME_OUT,
+    headers: {
+        'Content-Type': 'application/json'
+    }
 }, {
+    requestInterceptor: config => {
+        return config
+    },
+    requestInterceptorCatch: error => {
+        return error
+    },
     responseInterceptor: response => {
         const index = loadingURLs.findIndex(url => url === BASE_URL + response?.config?.url?.slice(1))
 
@@ -24,13 +33,38 @@ const request = new AxiosCX({
             }
         }
 
+        if (response.status != 200) {
+            let content = '请求失败, 请检查网络连接!'
+
+            switch (response.status) {
+                case 404:
+                    content = '请求地址不存在, 请确认请求地址是否存在或已删除'
+                    break
+
+                case 500:
+                    content = '服务器发生错误, 请重试'
+                    break
+
+                default:
+                    break
+            }
+
+            ElMessage.error({
+                message: content
+            })
+
+            return { code: -1 }
+        }
+
+        response.data = JSON.parse(response.data)
+
         if (response.data.code !== 0) {
             ElMessage.error({
                 message: response.data.msg
             })
         }
 
-        return response
+        return response.data
     },
     /* 响应发生错误拦截 */
     responseInterceptorCatch: error => {
