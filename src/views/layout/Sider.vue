@@ -2,6 +2,8 @@
     <div class="sider">
         <el-menu
             router
+            :default-active="route.path"
+            :unique-opened="true"
             class="el-menu-vertical"
         >
             <el-menu-item index="/home">
@@ -9,13 +11,23 @@
                 <span>首页</span>
             </el-menu-item>
 
-            <el-sub-menu>
+            <el-sub-menu index="/vue">
                 <template #title>
-                    <el-icon><location /></el-icon>
+                    <el-icon><Location /></el-icon>
                     <span>VUE3</span>
                 </template>
-                <el-menu-item index="/vue/base">基础</el-menu-item>
-                <el-menu-item index="/vue/component">组件</el-menu-item>
+                <el-menu-item index="/vue/base">
+                    <template #title>
+                        <el-icon><Watermelon /></el-icon>
+                        <span>基础</span>
+                    </template>
+                </el-menu-item>
+                <el-menu-item index="/vue/component">
+                    <template #title>
+                        <el-icon><Sugar /></el-icon>
+                        <span>组件</span>
+                    </template>
+                </el-menu-item>
             </el-sub-menu>
         </el-menu>
     </div>
@@ -27,7 +39,13 @@ import {
   Menu as IconMenu,
   Location,
   Setting,
+  Watermelon,
+  Sugar
 } from '@element-plus/icons-vue'
+
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <style scoped>
