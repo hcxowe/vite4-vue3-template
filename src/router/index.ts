@@ -16,76 +16,27 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'Home',
-                    component: () => import('../views/home/Home.vue'),
-                    meta: {
-                        permission: 'home',
-                        title: '首页',
-                        hidden: false,
-                        path: '/home',
-                        noCache: false,
-                        affix: true
-                    }
-                }
-            ]
-        },
-        /* {
-            path: '/about',
-            component: MainLayout,
-            children: [
-                {
-                    path: '',
-                    name: 'About',
-                    component: () => import('../views/about/About.vue'),
-                    meta: {
-                        permission: 'about',
-                        title: '关于',
-                        hidden: false,
-                        path: '/about',
-                        noCache: false,
-                        affix: false
-                    }
+                    component: () => import('../views/home/Home.vue')
                 }
             ]
         },
         {
-            path: '/system',
-            name: 'System',
+            path: '/vue',
+            name: 'Vue',
             component: MainLayout,
-            meta: {
-                permission: 'system',
-                title: '系统管理',
-                hidden: false,
-                path: '/system'
-            },
             children: [
                 {
-                    path: 'user',
-                    name: 'User',
-                    component: () => import('../views/system/userManage/User.vue'),
-                    meta: {
-                        permission: 'user',
-                        title: '用户管理',
-                        hidden: false,
-                        path: '/system/user',
-                        noCache: false,
-                        affix: false
-                    }
+                    path: 'base',
+                    name: 'VueBase',
+                    component: () => import('../views/vue/base/Base.vue')
                 },
                 {
-                    path: 'permission',
-                    name: 'Permission',
-                    component: () => import('../views/system/Permission.vue'),
-                    meta: {
-                        permission: 'permission',
-                        title: '权限管理',
-                        hidden: false,
-                        path: '/system/permission',
-                        noCache: true,
-                        affix: false
-                    }
+                    path: 'component',
+                    name: 'VueComponent',
+                    component: () => import('../views/vue/component/Component.vue')
                 }
             ]
-        }, */
+        },
         {
             path: '/:pathMatch(.*)',
             name: 'notFound',
