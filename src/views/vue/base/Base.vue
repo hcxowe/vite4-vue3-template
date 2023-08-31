@@ -1,8 +1,8 @@
 <template>
     <div :data-index="dataIndex" @click.native="onMsgClick">{{ showMsg }}</div>
-
+    <br>
     <div @click="reactiveObj.data.name = 'yx'">reactive深层次响应：{{ reactiveObj.data.name }}</div>
-
+    <br>
     <div @click="shallowReactiveObj.data.name = 'yx'">shallowReactive浅层次响应：{{ shallowReactiveObj.data.name }}</div>
 </template>
 
