@@ -9,13 +9,16 @@
     <el-input v-model="textValue" />
     <p>{{ computeTextValue }}</p>
     <p>{{ computeTextValue1 }}</p>
+    <br>
+    <p style="border-top: 1px solid #ccc;">模块引用：</p>
+    <input ref="input" />
 </template>
 
 <script lang="ts" setup>
 import { 
     ref, reactive, shallowReactive, 
     computed,
-    watch, watchEffect,
+    watch, watchEffect, watchPostEffect, 
     onMounted, onUnmounted, nextTick 
 } from 'vue'
 
@@ -63,7 +66,9 @@ const computeTextValue1 = computed({
     }
 })
 
+const input = ref(null)
 onMounted(() => {
+    input.value.focus()
     console.log('mounted')
 })
 
@@ -76,13 +81,18 @@ const obj = reactive({ count: 0 })
 watch(() => obj.count, (count) => {
     console.log(count)
 }, { 
-    deep: true,     // 深层侦听
-    immediate: true // 建侦听器时，立即执行一遍回调
+    deep: true,         // 深层侦听
+    immediate: true,    // 建侦听器时，立即执行一遍回调
+    flush: 'post'       // vue更新之后触发侦听回调
 })
 
 const username = ref('')
-// watchEffect自动跟踪回调的响应式依赖，username改变自动发起请求
-watchEffect(async () => {
+// watchEffect自动跟踪回调的响应式依赖，username改变自动发起请求，会立即执行回调进行依赖搜集
+const unwatch = watchEffect(async () => {
     const response = await login(username.value, 'password')
+}, { 
+    immediate: false // 不生效
 })
+
+unwatch() // 停止侦听器
 </script>
