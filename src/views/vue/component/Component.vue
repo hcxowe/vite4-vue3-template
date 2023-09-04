@@ -9,6 +9,10 @@
     </BaseComponent>
 
     <div>BaseCompoent 按钮点击次数：{{ count }}</div>
+
+    <hr>
+
+    
 </template>
 
 <script lang="ts" setup>
