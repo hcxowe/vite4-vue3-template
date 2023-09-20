@@ -28,6 +28,12 @@
                         <span>组件</span>
                     </template>
                 </el-menu-item>
+                <el-menu-item index="/vue/composables">
+                    <template #title>
+                        <el-icon><Apple /></el-icon>
+                        <span>组合式函数</span>
+                    </template>
+                </el-menu-item>
             </el-sub-menu>
         </el-menu>
     </div>
@@ -40,7 +46,8 @@ import {
   Location,
   Setting,
   Watermelon,
-  Sugar
+  Sugar,
+  Apple
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'
