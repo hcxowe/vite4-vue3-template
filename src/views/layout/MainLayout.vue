@@ -12,7 +12,9 @@
             <el-main>
                 <router-view v-slot="{ Component, route }">
                     <keep-alive>
-                        <component :is="Component" :key="route.meta.path || route.path" />
+                        <Transition name="fade">
+                            <component :is="Component" :key="route.meta.path || route.path" />
+                        </Transition>
                     </keep-alive >
                 </router-view>
             </el-main>
@@ -33,5 +35,17 @@ import Footer from './Footer.vue'
 <style scoped>
 :deep(.el-main) {
     --el-main-padding: 10px;
+
+    position: relative;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

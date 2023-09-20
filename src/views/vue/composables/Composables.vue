@@ -1,5 +1,5 @@
 <template>
-<div ref="wrapper">
+<div ref="wrapper" style="position: absolute;">
     <div>组合式函数：</div>
     <br>
 

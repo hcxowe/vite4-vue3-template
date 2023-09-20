@@ -1,12 +1,19 @@
-import { RefSetter } from 'element-plus/es/utils/index.js'
 import { onMounted, onUnmounted, Ref } from 'vue'
 
 export function useEventListener(target: Ref, event: string, callback: (event: any) => void) {
+    let element: HTMLElement | null = null
+
     onMounted(() => {
-        target.value.addEventListener(event, callback)
+        element = target.value
+
+        if (element) {
+            element.addEventListener(event, callback)
+        }
     })
 
     onUnmounted(() => {
-        target.value.removeEventListener(event, callback)
+        if (element) {
+            element.removeEventListener(event, callback)
+        }
     })
 }

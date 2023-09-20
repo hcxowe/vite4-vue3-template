@@ -1,5 +1,5 @@
 <template>
-<div ref="wrapper">
+<div style="position: absolute;">
     <div>指令：</div>
     <br>
     <input v-focus />

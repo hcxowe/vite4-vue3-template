@@ -47,14 +47,14 @@
 
 <script lang="ts" setup>
 import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-  Watermelon,
-  Sugar,
-  Apple,
-  ColdDrink
+    Document,
+    Menu as IconMenu,
+    Location,
+    Setting,
+    Watermelon,
+    Sugar,
+    Apple,
+    ColdDrink
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'
