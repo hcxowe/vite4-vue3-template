@@ -39,6 +39,11 @@ const router = createRouter({
                     path: 'composables',
                     name: 'VueComposables',
                     component: () => import('../views/vue/composables/Composables.vue')
+                },
+                {
+                    path: 'directive',
+                    name: 'VueDirective',
+                    component: () => import('../views/vue/directive/Directive.vue')
                 }
             ]
         },

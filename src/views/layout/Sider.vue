@@ -34,6 +34,12 @@
                         <span>组合式函数</span>
                     </template>
                 </el-menu-item>
+                <el-menu-item index="/vue/directive">
+                    <template #title>
+                        <el-icon><ColdDrink /></el-icon>
+                        <span>指令</span>
+                    </template>
+                </el-menu-item>
             </el-sub-menu>
         </el-menu>
     </div>
@@ -47,7 +53,8 @@ import {
   Setting,
   Watermelon,
   Sugar,
-  Apple
+  Apple,
+  ColdDrink
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'
