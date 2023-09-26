@@ -39,6 +39,10 @@ import Footer from './Footer.vue'
     position: relative;
 }
 
+:deep(.el-container) {
+    overflow: hidden;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .8s ease;

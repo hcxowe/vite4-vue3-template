@@ -53,6 +53,12 @@
                         <span>DayJS</span>
                     </template>
                 </el-menu-item>
+                <el-menu-item index="/tools/lodash">
+                    <template #title>
+                        <el-icon><Film /></el-icon>
+                        <span>Lodash</span>
+                    </template>
+                </el-menu-item>
             </el-sub-menu>
         </el-menu>
     </div>
@@ -68,7 +74,8 @@ import {
     Sugar,
     Apple,
     ColdDrink,
-    Fries
+    Fries,
+    Film
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'

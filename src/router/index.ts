@@ -56,6 +56,11 @@ const router = createRouter({
                     path: 'dayjs',
                     name: 'Day',
                     component: () => import('../views/tools/dayjs/Day.vue')
+                },
+                {
+                    path: 'lodash',
+                    name: 'Lodash',
+                    component: () => import('../views/tools/lodash/Lodash.vue')
                 }
             ]
         },
