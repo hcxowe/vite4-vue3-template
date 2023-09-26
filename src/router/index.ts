@@ -48,6 +48,18 @@ const router = createRouter({
             ]
         },
         {
+            path: '/tools',
+            name: 'Tools',
+            component: MainLayout,
+            children: [
+                {
+                    path: 'dayjs',
+                    name: 'Day',
+                    component: () => import('../views/tools/dayjs/Day.vue')
+                }
+            ]
+        },
+        {
             path: '/:pathMatch(.*)',
             name: 'notFound',
             component: () => import('../views/404/404.vue'),

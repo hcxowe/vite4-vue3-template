@@ -41,6 +41,19 @@
                     </template>
                 </el-menu-item>
             </el-sub-menu>
+
+            <el-sub-menu index="/tools">
+                <template #title>
+                    <el-icon><Location /></el-icon>
+                    <span>工具链</span>
+                </template>
+                <el-menu-item index="/tools/dayjs">
+                    <template #title>
+                        <el-icon><Fries /></el-icon>
+                        <span>DayJS</span>
+                    </template>
+                </el-menu-item>
+            </el-sub-menu>
         </el-menu>
     </div>
 </template>
@@ -54,7 +67,8 @@ import {
     Watermelon,
     Sugar,
     Apple,
-    ColdDrink
+    ColdDrink,
+    Fries
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'
