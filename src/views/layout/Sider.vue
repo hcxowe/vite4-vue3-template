@@ -59,6 +59,25 @@
                         <span>Lodash</span>
                     </template>
                 </el-menu-item>
+                <el-menu-item index="/tools/vueuse">
+                    <template #title>
+                        <el-icon><Notification /></el-icon>
+                        <span>Vueuse</span>
+                    </template>
+                </el-menu-item>
+            </el-sub-menu>
+
+            <el-sub-menu index="/webgl">
+                <template #title>
+                    <el-icon><Location /></el-icon>
+                    <span>WebGL</span>
+                </template>
+                <el-menu-item index="/webgl/one">
+                    <template #title>
+                        <el-icon><Fries /></el-icon>
+                        <span>one</span>
+                    </template>
+                </el-menu-item>
             </el-sub-menu>
         </el-menu>
     </div>
@@ -75,7 +94,7 @@ import {
     Apple,
     ColdDrink,
     Fries,
-    Film
+    Film, Notification
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'

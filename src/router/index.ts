@@ -61,7 +61,24 @@ const router = createRouter({
                     path: 'lodash',
                     name: 'Lodash',
                     component: () => import('../views/tools/lodash/Lodash.vue')
+                },
+                {
+                    path: 'vueuse',
+                    name: 'Vueuse',
+                    component: () => import('../views/tools/vueuse/Vueuse.vue')
                 }
+            ]
+        },
+        {
+            path: '/webgl',
+            name: 'WebGL',
+            component: MainLayout,
+            children: [
+                {
+                    path: 'one',
+                    name: 'One',
+                    component: () => import('../views/webGL/One.vue')
+                },
             ]
         },
         {
