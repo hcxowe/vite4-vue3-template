@@ -13,7 +13,7 @@
 
             <el-sub-menu index="/vue">
                 <template #title>
-                    <el-icon><Location /></el-icon>
+                    <el-icon><Burger /></el-icon>
                     <span>VUE3</span>
                 </template>
                 <el-menu-item index="/vue/base">
@@ -44,7 +44,7 @@
 
             <el-sub-menu index="/tools">
                 <template #title>
-                    <el-icon><Location /></el-icon>
+                    <el-icon><Umbrella /></el-icon>
                     <span>工具链</span>
                 </template>
                 <el-menu-item index="/tools/dayjs">
@@ -74,8 +74,21 @@
                 </template>
                 <el-menu-item index="/webgl/one">
                     <template #title>
-                        <el-icon><Fries /></el-icon>
+                        <el-icon><Goblet /></el-icon>
                         <span>one</span>
+                    </template>
+                </el-menu-item>
+            </el-sub-menu>
+
+            <el-sub-menu index="/css">
+                <template #title>
+                    <el-icon><KnifeFork /></el-icon>
+                    <span>CSS</span>
+                </template>
+                <el-menu-item index="/css/grid">
+                    <template #title>
+                        <el-icon><Orange /></el-icon>
+                        <span>网格布局</span>
                     </template>
                 </el-menu-item>
             </el-sub-menu>
@@ -93,8 +106,8 @@ import {
     Sugar,
     Apple,
     ColdDrink,
-    Fries,
-    Film, Notification
+    Fries, Goblet, Umbrella,
+    Film, Notification, Orange, KnifeFork, Burger
 } from '@element-plus/icons-vue'
 
 import { useRoute } from 'vue-router'

@@ -82,6 +82,18 @@ const router = createRouter({
             ]
         },
         {
+            path: '/css',
+            name: 'CSS',
+            component: MainLayout,
+            children: [
+                {
+                    path: 'grid',
+                    name: 'Grid',
+                    component: () => import('../views/css/grid/Grid.vue')
+                },
+            ]
+        },
+        {
             path: '/:pathMatch(.*)',
             name: 'notFound',
             component: () => import('../views/404/404.vue'),
